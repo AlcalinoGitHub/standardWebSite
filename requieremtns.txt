@@ -1,0 +1,16 @@
+asgiref==3.6.0
+contourpy==1.0.7
+cycler==0.11.0
+distlib==0.3.6
+Django==4.1.6
+filelock==3.9.0
+gmpy2==2.1.5
+gunicorn==20.1.0
+matplotlib==3.6.3
+numpy==1.24.2
+pandas==1.5.2
+platformdirs==3.0.0
+python-dateutil==2.8.2
+sqlparse==0.4.3
+tzdata==2022.7
+virtualenv==20.19.0

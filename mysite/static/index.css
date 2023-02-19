@@ -1,0 +1,44 @@
+.buttons {
+    background-color: antiquewhite;
+    width: fit-content;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 1px;
+    position: relative;
+    left: 50%;
+    font-size: xx-large;
+    transform: translate(-50%, 100%);
+}
+
+.buttons:hover {
+    background-color: rgb(120, 196, 164);
+}
+
+
+.Content {
+    margin:auto;
+    width: 90%;
+    padding: 10px;
+    background-color: aquamarine;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 1px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.buttonsRed {
+    background-color: antiquewhite;
+    width: fit-content;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 1px;
+    position: relative;
+    left: 50%;
+    font-size: xx-large;
+    transform: translate(-50%, 100%);
+}
+.buttonsRed:hover {
+    background-color: brown;
+}

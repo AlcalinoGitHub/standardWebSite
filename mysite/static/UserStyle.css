@@ -1,0 +1,25 @@
+.box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-bottom: 10px;
+    background-color: whitesmoke;
+    display:block;
+    width: fit-content;
+    padding: 70px 30px;
+    text-align: center;
+    box-shadow: 0px 0px 10px 1px;
+    border-radius: 10px;
+    align-content: center;
+}
+
+.title {
+    background-color: antiquewhite;
+    display: block;
+    width: fit-content;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 1px;
+}
