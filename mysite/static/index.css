@@ -81,3 +81,14 @@
     margin-top: 10px;
     margin-bottom: 10px;
 }
+.likebutton {
+    border:0;
+    background:none;
+    transform: scale(1.5);
+    margin-bottom: 5px;
+    transition-duration: 0.3s;
+  }
+
+.likebutton:active {
+    transform: scale(5);
+}

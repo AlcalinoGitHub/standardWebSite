@@ -32,6 +32,8 @@ def LikePost(request):
             CurrentPost.save()
         print(CurrentPost.LikedBy)
         print(CurrentPost.Likes)
+    elif request.user.is_authenticated == False:
+        return redirect('/accounts/register/')
 
     return redirect('/')
 
