@@ -54,11 +54,13 @@
     margin: 10px auto;
     padding-left: 5%;
     padding-right: 5%;
+    transition: all 0.2s ease;
     
 }
 
 .post:hover {
     background-color: antiquewhite;
+    transform: scale(1.5);
 }
 
 .comment {
