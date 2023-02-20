@@ -26,6 +26,10 @@ def LikePost(request):
             CurrentPost.LikedBy.append(request.user.id)
             CurrentPost.Likes += 1
             CurrentPost.save()
+        else:
+            CurrentPost.LikedBy.remove(request.user.id)
+            CurrentPost.Likes -= 1
+            CurrentPost.save()
         print(CurrentPost.LikedBy)
         print(CurrentPost.Likes)
 

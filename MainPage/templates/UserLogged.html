@@ -28,7 +28,7 @@
             <form action="{% url 'like' %}" method="post">
                 {% csrf_token %}
                 <input type = 'hidden' name = 'Post_id' value = '{{post.id}}'>
-                <input type = 'submit' name ='Like' value = 'like'>
+                <input type = 'submit' name ='Like' value = '❤️' class = 'likebutton'>
             </form>
             {% for comment in post.comment_set.all %}
                 <div class  = 'comment'>

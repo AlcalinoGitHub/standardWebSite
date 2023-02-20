@@ -80,3 +80,17 @@
     transition: background-color 0.2s ease;
     margin: 10px auto
 }
+
+.likebutton {
+    border:0;
+    background:none;
+    transform: scale(1.5);
+    margin-bottom: 5px;
+    transition-duration: 0.3s;
+  }
+
+.likebutton:active {
+    transform: scale(5);
+}
+  
+  
