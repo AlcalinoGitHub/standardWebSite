@@ -23,12 +23,6 @@
         <div class = 'post'>
             {{post.Title}}<br> {{post.Content}} <br> -{{post.Owner}} <br> Likes:{{post.Likes}} <br>
             <div class = 'commentBox'>
-                {%for comment in post.Comments%}
-                <div class = 'comment'>
-                    {{comment.author}}: {{comment.Content}}<br>
-                </div>
-                {%endfor%}
-            </div> 
             <form action="{% url 'like' %}" method="post">
                 {% csrf_token %}
                 <input type = 'hidden' name = 'Post_id' value = '{{post.id}}'>
