@@ -21,11 +21,24 @@
     <div>
         {% for post in PostData %}
         <div class = 'post'>
-            {{post.Title}}<br> {{post.Content}} <br> -{{post.Owner}} <br> Likes:{{post.Likes}}
+            {{post.Title}}<br> {{post.Content}} <br> -{{post.Owner}} <br> Likes:{{post.Likes}} <br>
+            <div class = 'commentBox'>
+                {%for comment in post.Comments%}
+                <div class = 'comment'>
+                    {{comment.author}}: {{comment.Content}}<br>
+                </div>
+                {%endfor%}
+            </div> 
             <form action="{% url 'like' %}" method="post">
                 {% csrf_token %}
                 <input type = 'hidden' name = 'Post_id' value = '{{post.id}}'>
                 <input type = 'submit' name ='Like' value = 'like'>
+            </form>
+            <form action="{% url 'comment' %}" method="post">
+                {% csrf_token %}
+                <input type = 'hidden' name = 'Post_id' value = '{{post.id}}'>
+                <textarea name = 'comment' placeholder="Comment"></textarea>
+                <input type = 'submit'>
             </form>
         </div> <br>
     </div>

@@ -34,7 +34,8 @@ def LikePost(request):
 def comment(request):
     if request.method == 'POST':
         Comment  = request.POST.get('comment')
-        if Comment != '':
+        print(request.user)
+        if Comment != '' and request.user.is_authenticated:
             PostID = request.POST.get('Post_id')
             CurrentPost = Post.objects.get(id = PostID)
             NewComment = {
@@ -43,7 +44,6 @@ def comment(request):
             }
             CurrentPost.Comments.append(NewComment)
             CurrentPost.save()
-            print(CurrentPost.Comments)
     return redirect('/')
 
 def delete_comment(request):
