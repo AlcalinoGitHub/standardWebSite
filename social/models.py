@@ -9,4 +9,5 @@ class Post(models.Model):
     Published = models.BooleanField(default=False)
     Owner = models.ForeignKey(User, on_delete=models.CASCADE)
     LikedBy = models.JSONField(default=list)
+    Comments = models.JSONField(default=list)
 
