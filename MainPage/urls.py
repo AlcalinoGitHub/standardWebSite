@@ -3,5 +3,6 @@ from . import views
 
 
 urlpatterns = [
-    path('', views.MainPage )
+    path('', views.MainPage ),
+    path('like/', views.LikePost, name = 'like')
 ]

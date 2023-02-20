@@ -8,12 +8,12 @@
     position: relative;
     left: 50%;
     font-size: xx-large;
-    transform: translate(-50%, 100%);
+    transform: translate(-50%, -110%);
     transition: background-color 0.2s ease;
 }
 
 .buttons:hover {
-    background-color: greenyellow;
+    background-color: rgb(120, 196, 164);
 }
 
 
@@ -36,9 +36,9 @@
     border-radius: 10px;
     box-shadow: 0px 0px 10px 1px;
     position: relative;
-    left: 50%;
     font-size: xx-large;
-    transform: translate(-50%, 100%);
+    transform: translate(-0%, 0%);
+    transition: background-color 0.2s ease;
 }
 .buttonsRed:hover {
     background-color: brown;

@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'MainPage',
     'Accounts',
+    'social'
 ]
 
 MIDDLEWARE = [
@@ -126,6 +127,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, r'C:\Users\Yo\Desktop\MiPc\SecondDjangoExperiment\mysite\mysite\static'),
+    os.path.join(BASE_DIR, r'C:\Users\Yo\Desktop\MiPc\Projects\SocialMediaAttempt\mysite\static'),
 
 ]

@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="/static/index.css">
+    <link rel="stylesheet" type="text/css" href="/static/logged.css">
 </head>
 <body>
 
@@ -16,10 +16,23 @@
         <div class = 'buttonsRed'>
             <a href = 'accounts/logout'>Logout</a>
         </div>
-
-
+        <div class = 'buttons'>
+            <a href = '/posts/'>Make a Post</a>
+        </div>
 
     </div>
+    <div>
+        {% for post in PostData %}
+        <div class = 'post'>
+            {{post.Title}}<br> {{post.Content}} <br> -{{post.Owner}} <br> Likes:{{post.Likes}}
+            <form action="{% url 'like' %}" method="post">
+                {% csrf_token %}
+                <input type = 'hidden' name = 'Post_id' value = '{{post.id}}'>
+                <input type = 'submit' name ='Like' value = 'like'>
+            </form>
+        </div> <br>
+    </div>
+    {%endfor%}
 
 </body>
 </html>
