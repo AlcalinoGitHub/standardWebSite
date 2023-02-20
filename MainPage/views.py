@@ -1,14 +1,15 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from social.models import Post
+from social.models import Post, Comment
 from django.contrib.auth.models import User, auth
-from django.shortcuts import get_object_or_404
 
 def MainPage(request):
     Posts = list(Post.objects.all())
     Posts = Posts[::-1]
+    Comentarios = list(Comment.objects.all())
     context = {
-        'PostData': Posts
+        'PostData': Posts,
+        'Comentarios': Comentarios
     }
 
 
@@ -33,19 +34,18 @@ def LikePost(request):
 
 def comment(request):
     if request.method == 'POST':
-        Comment  = request.POST.get('comment')
+        data  = request.POST.get('comment')
         print(request.user)
-        if Comment != '' and request.user.is_authenticated:
+        if data != '' and request.user.is_authenticated:
             PostID = request.POST.get('Post_id')
             CurrentPost = Post.objects.get(id = PostID)
-            NewComment = {
-                'author': str(request.user),
-                'Content': Comment
-            }
-            CurrentPost.Comments.append(NewComment)
-            CurrentPost.save()
+            NewComment = Comment.objects.create(Content = data, Owner = request.user, PostedOn = CurrentPost)
+            NewComment.save()
     return redirect('/')
 
 def delete_comment(request):
-
+    if request.method == 'POST':
+        CommentId = request.POST.get('CommentID')
+        CurrentComment = Comment.objects.get(id = CommentId)
+        CurrentComment.delete()
     return redirect('/')

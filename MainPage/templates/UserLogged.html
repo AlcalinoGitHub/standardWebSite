@@ -24,18 +24,32 @@
     <div>
         {% for post in PostData %}
         <div class = 'post'>
-            {{post.Title}}<br> {{post.Content}} <br> -{{post.Owner}} <br> Likes:{{post.Likes}} <br>
+            {{post.Title}}<br> {{post.Content}} <br> -{{post.Owner}} <br> Likes:{{post.Likes}} <br> id: {{post.id}} <br>
             <form action="{% url 'like' %}" method="post">
                 {% csrf_token %}
                 <input type = 'hidden' name = 'Post_id' value = '{{post.id}}'>
                 <input type = 'submit' name ='Like' value = 'like'>
             </form>
+            {% for comment in post.comment_set.all %}
+                <div class  = 'comment'>
+                    <strong>{{ comment.Owner.username }}</strong>:{{ comment.Content }}
+                    {%if comment.Owner == request.user%}
+                        <form action = '{% url 'delete_comment' %}' method = 'post'>
+                            {% csrf_token %}
+                            <input type = 'hidden' name = 'CommentID' value = {{comment.id}}> 
+                            <input type = 'submit' value = 'delete'>
+                        </form>
+                    {%endif%}
+                </div>
+            {% endfor %}
+    
             <form action="{% url 'comment' %}" method="post">
                 {% csrf_token %}
                 <input type = 'hidden' name = 'Post_id' value = '{{post.id}}'>
                 <textarea name = 'comment' placeholder="Comment"></textarea>
                 <input type = 'submit'>
             </form>
+    
         </div> <br>
     </div>
     {%endfor%}
